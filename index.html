@@ -3,26 +3,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USER INFORMATION</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h2>User Information</h2>
-    <div>
-   <label for="name">Name</label>
-    <input type="text" id="name">
-    </div>
+    <div class = "form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name">
     <br>
-    <div>
-    <label for="age">Age</label>
-    <input type="text" id="age">
-    </div>
+        <label for="age">Age</label>
+        <input type="text" id="age">
     <br>
-    <div>
-    <label for="phonenumber">Phone number</label>
-    <input type="text" id="phonenumber">
-    </div>
+        <label for="phonenumber">Phonenumber</label>
+        <input type="text" id="phonenumber">
     <br>
-    <input type="Submit" value="Submit"> 
-    <input type="Reset" value="Reset">
-</div>
+     <!-- <button onclick="MyAddrow()">Submit</button>
+    <button onclick="MyAddrow()">Reset</button>--> 
+     <!-- commenting to try another code  -->
+      
+    <button id="addbutton"> Submit </button>
+    <br>
+    </div>
+<table id = "userTable">
+    <thead>
+        <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Phonenumber</th>
+       </tr>
+    </thead>
+</table>
 </body>
+<script src="script.js"></script>
 </html>
