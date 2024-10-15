@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{ 
+            background: #bcce1d;
+        }
+        table{
+            border: 4px; 
+            padding: 20px;
+            background-color: aquamarine;
+        }
+        th,td{
+          border: 2px solid black;
+          
+        }
+    </style>
+</head>
+<body>
+    <h3>Employee Information</h3>
+    <table >
+      <tr>
+        <th>Employee Name</th>
+        <th> EmployeeId</th>
+        <th> Department</th>
+      </tr>
+      <tr>
+      <td onclick="rowClicked()"> Fariha </td>
+      <td>  54 </td>
+      <td> Operations </td>
+    </tr>
+    <tr>
+      <td onmouseover="rowClicked()"> Arba </td>
+      <td>  98 </td>
+      <td> Human Resources </td>
+    </tr>
+    </table>
+    <script>
+      function rowClicked() {
+        window.alert("This is working");
+      }
+    </script>
+</body>
+
+</html>
