@@ -1,38 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USER INFORMATION</title>
-    <link rel="stylesheet" href="style.css">
+    <title>User Data Entry</title>
 </head>
 <body>
-    <h2>User Information</h2>
-    <div class = "form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name">
-    <br>
-        <label for="age">Age</label>
-        <input type="text" id="age">
-    <br>
-        <label for="phonenumber">Phonenumber</label>
-        <input type="text" id="phonenumber">
-    <br>
-     <!-- <button onclick="MyAddrow()">Submit</button>
-    <button onclick="MyAddrow()">Reset</button>--> 
-     <!-- commenting to try another code  -->
-      
-    <button id="addbutton"> Submit </button>
-    <br>
-    </div>
-<table id = "userTable">
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Phonenumber</th>
-       </tr>
-    </thead>
-</table>
+     <h1>User Data Entry</h1>
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Enter Name" >
+            <input type="number" id="age" placeholder="Enter Age" >
+            <input type="text" id="phone" placeholder="Enter Phone Number">
+            <button id="addButton">Add</button>
+        </div>
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    <script>
+        document.getElementById('addButton').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const phone = document.getElementById('phone').value;
+    
+        if (name && age && phone) {
+        const tableBody = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+        const newRow = tableBody.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        
+        cell1.textContent = name;
+        cell2.textContent = age;
+        cell3.textContent = phone;
+
+        // Clear input fields after adding
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('phone').value = '';
+         } 
+        else {
+        alert("Please fill in all fields");
+        }
+        });
+    </script>
 </body>
-<script src="script.js"></script>
 </html>
+
+

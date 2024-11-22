@@ -17,5 +17,18 @@ HTML page should have a button named Show that when clicked will show the names 
         </ul>
     </div>
     </body>
-<script src="scriptt.js"></script>
+<script >
+    function showDays() {
+            var daysList = document.getElementById('daysList');
+            daysList.innerHTML = `
+                <li>Sunday</li>
+                <li>Monday</li>
+                <li>Tuesday</li>
+                <li>Wednesday</li>
+                <li>Thursday</li>
+                <li>Friday</li>
+                <li>Saturday</li>
+            `;
+        }
+</script>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</body>
+
+<h1>Fetch API Example</h1>
+
+<button id="getData">Get Data</button>
+<div id="response"></div>
+
+<script>
+const getDataButton = document.getElementById('getData');
+const responseDiv = document.getElementById('response');
+
+getDataButton.addEventListener('click', () => {
+  const api = 'https://hdv-content-safety.cognitiveservices.azure.com/contentsafety/text:analyze?api-version=2023-10-01'
+
+  fetch(api,
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': "application/json",
+            'Ocp-Apim-Subscription-Key': "e8ed54f5de3e44a6966ee76b79b89a77"
+        },
+        body: JSON.stringify ({text:"I like you"})
+    }
+ )
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+        responseDiv.textContent = JSON.stringify(data);
+    });
+});
+</script>
+
+</html>

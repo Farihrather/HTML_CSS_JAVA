@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+</body>
+
+<h1>Fetch API Example</h1>
+
+<button id="getData">Get Data</button>
+<div id="response"></div>
+
+<script>
+const getDataButton = document.getElementById('getData');
+const responseDiv = document.getElementById('response');
+
+getDataButton.addEventListener('click', () => {
+  const api = 'https://jsonplaceholder.typicode.com/todos/1'; 
+
+  fetch(api)
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      responseDiv.textContent = JSON.stringify(data);
+    });
+});
+</script>
+</script>
+</html>
